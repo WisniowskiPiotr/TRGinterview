@@ -2,7 +2,7 @@ package io.wistronics.trginterview.services
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
-import zio.{Has, Task, UIO, ULayer, ZIO, ZLayer}
+import zio.{ Has, Task, UIO, ULayer, ZIO, ZLayer }
 
 import scala.util.Random
 
@@ -30,7 +30,7 @@ object SparkService {
   case class Local() extends SparkService {
     override def getOrCreate(appName: String, engineConfigs: Map[String, String]): ZIO[Any, Throwable, SparkSession] =
       Task {
-        val dbName = s"hive_metastore_db_${Random.nextInt()}".replace('-','_')
+        val dbName = s"hive_metastore_db_${Random.nextInt()}".replace('-', '_')
         val spark = SparkSession
           .builder()
           .config(

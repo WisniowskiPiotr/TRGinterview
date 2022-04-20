@@ -8,7 +8,7 @@ SELECT
     district_name,
     COUNT(*) AS count_crimes
 FROM crimes_output
-GROUP BY 1
+GROUP BY 1 -- most likely one would also like to have monthly time grouping but this needs to be specified
 CLUSTER BY '' -- to put everything in single file
 ;
 
@@ -22,7 +22,7 @@ SELECT
     crime_type,
     COUNT(*) AS count_crimes
 FROM crimes_output
-GROUP BY 1
+GROUP BY 1 -- most likely one would also like to have monthly time grouping but this needs to be specified
 CLUSTER BY '' -- to put everything in single file
 ;
 
@@ -36,6 +36,6 @@ SELECT
     last_outcome,
     COUNT(*) AS count_crimes
 FROM crimes_output
-GROUP BY 1
+GROUP BY 1 -- most likely one would also like to have monthly time grouping but this needs to be specified
 CLUSTER BY '' -- to put everything in single file
 ;

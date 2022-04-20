@@ -10,11 +10,11 @@
 
 ## Engine code:
 In `/src/main/scala` there is a code for spark sql runner engine - app that allows to run sql files taken from resources folder on local spark cluster.
-The app is written in purely functional manner by using ZIO lib. To rune the engine simply `run /list/of/file`
+The app is written in purely functional manner by using ZIO lib. To run the engine simply `run /list/of /sql/files`
 
 ## Transformation code:
 Transformations used to transform the data and produce final results are present in `/src/main/resources/sqls`. it is assumed that the input data should be present in `/src/main/resources/data/input`.
 The output will be generated into `/src/main/resources/data/output/`.
 
 ## Running
-To run the computation simply on sbt console: `run "/sqls/01_load_the_data.sql" "/sqls/02_create_output_table.sql" "/sqls/03_compute_kpis.sql"`
+To run the computation simply put the input data in `/src/main/resources/data/input/` and on sbt console: `run "/sqls/01_load_the_data.sql" "/sqls/02_create_output_table.sql" "/sqls/03_compute_kpis.sql"`.

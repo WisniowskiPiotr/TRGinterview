@@ -13,10 +13,7 @@ scalacOptions ++= Seq(
   "-Yrangepos", // required by SemanticDB compiler plugin
   "-Ywarn-unused-import" // required by `RemoveUnused` rule
 )
-javaOptions ++= Seq(
-  "-Dderby.stream.error.file=derby.log",
-  "-Dderby.system.home=./target"
-)
+javaOptions ++= Seq("-Dderby.stream.error.file=derby.log", "-Dderby.system.home=./target")
 run / fork := true
 
 addCommandAlias("fmt", "; compile:scalafmt; test:scalafmt; scalafmtSbt; compile:scalafix; test:scalafix;")
